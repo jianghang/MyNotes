@@ -13,6 +13,9 @@
 	- **select new list(s.name,s.tel,s.address) from Seller s** 返回值为 **list** 集合
 	- **select new map(s.name,s.tel,s.address) from Seller s** 返回值为 **map**
 	
+			String hql = "select new map(s.name,s.tel,s.address) from Seller s";
+			Query query = session.createQuery(hql);
+
 			List<Map> maps = query.list();
 			
 			for(Map map : maps){
@@ -22,6 +25,9 @@
 			}
 	- **select new map(s.name as name,s.tel as tel,s.address as address) from Seller s** 使用别名来获取 **map** 中的 **key** 值
 	
+			String hql = "select new map(s.name as name,s.tel as tel,s.address as address) from Seller s";
+			Query query = session.createQuery(hql);
+
 			List<Map> maps = query.list();
 			
 			for(Map map : maps){
