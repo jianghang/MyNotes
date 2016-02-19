@@ -1,13 +1,14 @@
 ##Hibernate HQL##
 
-
-1. **from语句**
+-  **from语句**
 	- `from objectName`直接查找类名
 	- `from objectName o`使用 **o** 来替代 **objectName**（别名）
 
 ----------
 
-2. **select语句**
+
+
+- **select语句**
 	- `select s.name,s.tel,s.address from Seller s` 使用   **select** 来精确查找 **Seller** 类中的信息同时使用了别名 **s** ，返回的类型为 **Object[]**
 	- `select s.name from Seller s` 如果查找单个类中的属性返回类型则为 **Object**
 	- `select new list(s.name,s.tel,s.address) from Seller s` 返回值为 **list** 集合
@@ -40,7 +41,9 @@
 
 ----------
 
-3. **where子句**
+
+
+-  **where子句**
 	- 比较运算 **=、<>、<、>、>=、<=**
 		1. `from Commodity c where c.price>400` 输出价格大于400的结果
 		2. `from Commodity c where c.description is null` 输出描述（description）为空的结果
@@ -69,6 +72,8 @@
 
 ----------
 
-4. **order by子句**
+
+
+-  **order by子句**
 	- `from Commodity order by price asc` 查询结果为按价格升序排序
 	- `from Commodity order by seller.id asc,price desc,name asc` 返回的结果，首先按 **seller.id** 升序排列，如果 **seller.id** 相同，则按照 **price** 降序排列，如果前两个都相同，则按照第三个方式排序
