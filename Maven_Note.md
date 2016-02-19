@@ -49,3 +49,50 @@
 		
 		<localRepository>E:/libs/repo</localRepository>  
 
+----------
+
+-**pom.xml解析**
+
+	<groupId>反写的公司网址+项目名</groupId>
+	<artifactId>项目名+模块名</artifactId>
+	<version>
+		第一个0表示大版本号
+		第二个0表示分支版本号
+		第三个0表示小版本号
+		0.0.1
+		snapshot快照
+		alpha内部测试
+		beta公测
+		Release稳定
+		GA正式发布
+	</version>
+	
+	<packaging>默认是jar war zip pom</packaging>
+	<name>项目描述名</name>
+	<url>项目的地址</url>
+	<description>项目描述</description>
+	<developers>开发人员信息</developers>
+
+	<dependencies>
+		<dependency>依赖</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>依赖管理</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	插件列表
+	<build>
+		<plugins>
+			<plugin>
+				<groupId></groupId>
+				<artifactId></artifactId>
+				<version></version>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
