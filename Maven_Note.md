@@ -51,48 +51,55 @@
 
 ----------
 
--**pom.xml解析**
+- **pom.xml解析**
 
-	<groupId>反写的公司网址+项目名</groupId>
-	<artifactId>项目名+模块名</artifactId>
-	<version>
-		第一个0表示大版本号
-		第二个0表示分支版本号
-		第三个0表示小版本号
-		0.0.1
-		snapshot快照
-		alpha内部测试
-		beta公测
-		Release稳定
-		GA正式发布
-	</version>
+		<groupId>反写的公司网址+项目名</groupId>
+		<artifactId>项目名+模块名</artifactId>
+		<version>
+			第一个0表示大版本号
+			第二个0表示分支版本号
+			第三个0表示小版本号
+			0.0.1
+			snapshot快照
+			alpha内部测试
+			beta公测
+			Release稳定
+			GA正式发布
+		</version>
+		
+		<packaging>默认是jar war zip pom</packaging>
+		<name>项目描述名</name>
+		<url>项目的地址</url>
+		<description>项目描述</description>
+		<developers>开发人员信息</developers>
 	
-	<packaging>默认是jar war zip pom</packaging>
-	<name>项目描述名</name>
-	<url>项目的地址</url>
-	<description>项目描述</description>
-	<developers>开发人员信息</developers>
-
-	<dependencies>
-		<dependency>依赖</dependency>
-	</dependencies>
-
-	<dependencyManagement>
 		<dependencies>
-			<dependency>依赖管理</dependency>
+			<dependency>依赖</dependency>
+			<scope>
+				* compile，缺省值，适用于所有阶段，会随着项目一起发布
+    			* provided，类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar
+    			* runtime，只在运行时使用，如JDBC驱动，适用运行和测试阶段
+    			* test，只在测试时使用，用于编译和运行测试代码。不会随项目发布
+    			* system，类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它
+			</scope>
 		</dependencies>
-	</dependencyManagement>
-
-	插件列表
-	<build>
-		<plugins>
-			<plugin>
-				<groupId></groupId>
-				<artifactId></artifactId>
-				<version></version>
-			</plugin>
-		</plugins>
-	</build>
+	
+		<dependencyManagement>
+			<dependencies>
+				<dependency>依赖管理</dependency>
+			</dependencies>
+		</dependencyManagement>
+	
+		插件列表
+		<build>
+			<plugins>
+				<plugin>
+					<groupId></groupId>
+					<artifactId></artifactId>
+					<version></version>
+				</plugin>
+			</plugins>
+		</build>
 
 
 
